@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # 3rd Party
     "rest_framework",
     "corsheaders",
+    "django_crontab",
 ]
 
 MIDDLEWARE = [
@@ -155,3 +156,7 @@ SIMPLE_JWT = {
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
+
+CRONJOBS = [
+    ("0 0 * * *", "your_app.tasks.send_daily_email"),
+]
